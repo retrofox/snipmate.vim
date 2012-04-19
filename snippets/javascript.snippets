@@ -1,3 +1,7 @@
+# Summary
+#   _statements
+#
+
 # Prototype
 snippet proto
 	${1:name}.prototype.${2:method} = function(${3:args}) {
@@ -22,7 +26,7 @@ snippet varf
 snippet inf
 	function(${1}) {${2}};
 #
-# --- Control structures ---
+#--- _Statements ------------------------------------------------------------------
 # if
 # https://developer.mozilla.org/en/JavaScript/Reference/Statements/if...else
 snippet if
@@ -69,20 +73,23 @@ snippet case
 		${2:}
 		break;${3}
 #
-# for
-snippet f
+snippet f for definition
 	for (var ${2:i} = 0; $2 < ${1:array}.length; $2${3:++}) {
 		${4:var item = $1[$2];}${5:}
-	};
+	};i
 #
-# decrement for
-snippet decf
+snippet decf decrement for definition
 	for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3:--}) {
 		${4:var item = $1[$2];}${5:}
 	};
 #
-# while
+snippet fori for in deinition
+	for (var ${1:key} in ${2:object}) {
+		${3:}
+	}
+#
 # https://developer.mozilla.org/en/JavaScript/Reference/Statements/while
+# while
 snippet w
 	while (${1:expression}) {
 		${2:}
@@ -95,6 +102,7 @@ snippet do
 		${2:}
 	} while (${1:condition});
 #
+#----------------------------------------------------------------------------------
 # Object Method
 snippet :f
 	${1:name}: function(${2:args}) {
